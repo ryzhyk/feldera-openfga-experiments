@@ -1,4 +1,17 @@
 /*
+model
+  schema 1.1
+
+type user
+
+type document
+  relations
+    define viewer: [user] but not restricted
+    define restricted: [user] but not unrestricted
+    define unrestricted: [user] or viewer
+*/
+
+/*
 The following input causes the pipeline to diverge, as expected:
 
 insert into tuples values ('document', '1', 'viewer', 'user', 'jon', '');
